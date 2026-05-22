@@ -1,0 +1,13 @@
+{
+    "None": "If none of the candidates matches the entity in the image, or if you are not confident enough to choose one, you must answer 'None' instead of guessing. In that case, explain why no candidate fits in Explanation:",
+    "free": "What entity does the label '{mention}' represent in this image? ",
+    "contrast": [
+        "What entity does the label '{mention}' represent in this image?",
+        {
+            "possibilities-nom": "Here are the names of the possibilities :\n{candidates}",
+            "possibilities-nom-description": "Here are the names of the possibilities, each accompanied by a brief description:\n{candidates}",
+            "possibilities-nom-description-image": "Here are the names of the possibilities, each accompanied by a brief description and an image of that possibility:\n{candidates}"
+        }
+    ],
+    "response format": "You must strictly adhere to this format for your response, without any additional introduction. Format: Answer: 'Enter the name of the selected candidate entity here' Explanation: 'Briefly describe why you chose this entity' The quotation marks for 'answer' and 'explanation' are very important; you must always include them."
+}

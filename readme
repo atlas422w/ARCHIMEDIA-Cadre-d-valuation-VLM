@@ -1,0 +1,28 @@
+For use Argparse
+--model: Choose the model
+
+1 = Qwen3-VL-8B
+
+2 = LLaVA-1.5-7B
+
+--prompt-type: Prompt type
+
+free = Free prompt, the model responds directly
+
+contrast = Offers a list of candidates (requires the --contrast-option)
+
+--contrast-option: Candidate format (only if --prompt-type contrast)
+
+possibilities-name = Names only
+
+possibilities-name-description = Names + descriptions
+
+possibilities-name-description-image = Names + descriptions + thumbnails
+
+--none: Optional; if enabled, the model can respond "None" if it doesn't know the model
+
+--run-name: Run name; used to name output files, choose a descriptive name
+
+Exemple:
+python main.py --model 1 --prompt-type free --run-name qwen_free
+python main.py --model 1 --prompt-type contrast --contrast-option possibilities-nom --none --run-name qwen_contrast_nom

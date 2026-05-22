@@ -1,0 +1,33 @@
+2026-05-06 07:19:57 [INFO] potato.authentication: user_config_path 'data/users.jsonl' does not exist yet; will be created on first registration
+2026-05-06 07:19:57 [INFO] potato.authentication: Initialized UserAuthenticator with method: in_memory, require_password: True
+2026-05-06 07:19:57 [INFO] potato.item_state_management: ItemStateManager initialized with random_seed=1234
+2026-05-06 07:19:57 [INFO] server_utils.front_end: Generating anntotation site at /usr/local/lib/python3.10/site-packages/potato/templates
+2026-05-06 07:19:57 [INFO] server_utils.front_end: Using custom task layout file: templates/entity_image.html
+2026-05-06 07:19:57 [INFO] potato.server_utils.schemas.radio: Successfully generated radio layout for entity_is_illustrated with 3 options
+2026-05-06 07:19:57 [INFO] potato.server_utils.schemas.textbox: Successfully generated textbox layout for comment with 1 fields
+2026-05-06 07:19:57 [INFO] server_utils.front_end: Created generated templates directory: /usr/local/lib/python3.10/site-packages/potato/templates/generated
+2026-05-06 07:19:57 [INFO] potato.flask_server: Loaded user data for 0 users
+2026-05-06 07:19:57 [WARNING] potato.server_utils.mturk_apis: boto3 not available, MTurk API disabled
+2026-05-06 07:19:57 [INFO] potato.flask_server: Server initialization complete (WSGI factory mode)
+2026-05-06 07:19:57 [INFO] potato.server_utils.html_sanitizer: Registered HTML sanitization Jinja2 filters
+2026-05-06 07:20:10 [INFO] potato.authentication: User info file saved at: data/users.jsonl
+2026-05-06 07:20:14 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 10649
+2026-05-06 08:05:27 [WARNING] potato.authentication: Authentication failed: user 'laurent.amsaleg' does not exist
+2026-05-06 08:05:27 [WARNING] potato.flask_server: Login failed for user: laurent.amsaleg
+2026-05-06 08:05:53 [INFO] potato.authentication: User info file saved at: data/users.jsonl
+2026-05-06 08:11:45 [INFO] potato.authentication: User info file saved at: data/users.jsonl
+2026-05-06 08:51:26 [INFO] potato.flask_server: User logged out successfully
+2026-05-06 11:20:07 [INFO] potato.flask_server: Login successful for user: laurent.amsaleg
+2026-05-06 11:20:13 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 5525
+2026-05-06 11:20:17 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 5525
+2026-05-06 11:20:27 [INFO] potato.flask_server: User logged out successfully
+2026-05-06 11:27:24 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 11549
+2026-05-06 11:59:48 [INFO] potato.flask_server: Login successful for user: laurent.amsaleg
+2026-05-07 07:41:59 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 7274
+2026-05-07 08:01:08 [INFO] potato.authentication: User info file saved at: data/users.jsonl
+2026-05-07 08:06:41 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 1631
+2026-05-07 08:15:08 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 9089
+2026-05-07 08:18:09 [INFO] potato.flask_server: Blocking navigation: Required annotation(s) not completed: entity_is_illustrated for instance 5525
+2026-05-07 08:23:25 [INFO] potato.authentication: User info file saved at: data/users.jsonl
+2026-05-07 09:11:25 [INFO] potato.flask_server: Login successful for user: eraimond
+2026-05-07 09:31:38 [INFO] potato.flask_server: User eraimond not in annotation phase (phase=done), redirecting.

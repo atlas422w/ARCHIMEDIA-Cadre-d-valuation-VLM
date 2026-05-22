@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard ARCHIMEDIA - Entity Linking Evaluation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 antialiased min-h-screen">
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-xl font-bold tracking-tight">ARCHIMEDIA — VLM Evaluation Framework</h1>
+                <p class="text-xs text-slate-400">Active model: <span class="text-amber-400 font-semibold">llava-1.5-7b-hf</span></p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-center text-sm">
+                <div class="bg-slate-800 px-4 py-1.5 rounded-md border border-slate-700"><span class="text-xs text-slate-400 block">Total</span><span class="font-bold">2</span></div>
+                <div class="bg-emerald-950/40 px-4 py-1.5 rounded-md border border-emerald-500/30"><span class="text-xs text-emerald-400 block">✅ Correct</span><span class="font-bold text-emerald-400">0</span></div>
+                <div class="bg-amber-950/40 px-4 py-1.5 rounded-md border border-amber-500/30"><span class="text-xs text-amber-400 block">🟨 None Answers</span><span class="font-bold text-amber-400">0</span></div>
+                <div class="bg-rose-950/40 px-4 py-1.5 rounded-md border border-rose-500/30"><span class="text-xs text-rose-400 block">❌ Incorrect</span><span class="font-bold text-rose-400">2</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-6 space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider bg-slate-800 text-white px-3 py-1 rounded-full">Example #1</span>
+                    <span class="px-3 py-1 text-xs font-bold rounded-full bg-rose-600 text-white">🟥 WRONG ANSWER</span>
+                </div>
+                <span class="text-sm font-medium text-slate-500">Mention: <strong class="text-slate-900">"Šar Mountains in North Macedonia."</strong></span>
+            </div>
+            
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/60">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">📍 CASE 1: Input</h4>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="md:col-span-1 flex flex-col items-center justify-center bg-white p-2 rounded-lg border border-slate-200">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/%C5%A0ar_Mountain%2C_Macedonia.jpg" class="max-h-40 object-contain rounded" onerror="this.src='https://placehold.co/150x150?text=No+Image';">
+                    </div>
+                    <div class="md:col-span-3"><div class="bg-slate-900 rounded-lg p-4 font-mono text-xs text-emerald-400 overflow-y-auto max-h-40 whitespace-pre-wrap">What entity does the label 'Šar Mountains in North Macedonia.' represent in this image? 
+You must strictly adhere to this format for your response, without any additional introduction. Format: Answer: 'Enter the name of the selected candidate entity here' Explanation: 'Briefly describe why you chose this entity' The quotation marks for 'answer' and 'explanation' are very important; you must always include them.</div></div>
+                </div>
+            </div>
+            
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/60">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">🗂️ CASE 2: Candidates</h4>
+                <div class="space-y-3">
+                    <div class="relative flex gap-4 p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50/20">
+                        <div class="absolute top-2 right-2 flex gap-1"><span class="bg-emerald-600 text-white text-[9px] font-extrabold px-2 py-0.5 rounded shadow">GROUND TRUTH</span> </div>
+                        <div class="w-16 h-16 bg-slate-100 rounded-lg overflow-hidden border flex items-center justify-center flex-shrink-0">
+                            <img src="http://commons.wikimedia.org/wiki/Special:FilePath/Map%20of%20the%20Republic%20of%20Macedonia-mk.svg" class="object-cover w-full h-full" onerror="this.src='https://placehold.co/100x100?text=N/A';">
+                        </div>
+                        <div class="flex-1 pr-36">
+                            <h5 class="text-sm font-bold text-slate-900">North Macedonia</h5>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">North Macedonia, officially the Republic of North Macedonia, is a landlocked country in Southeast Europe. It shares land borders with Greece to the south, Albania to the west, Bulgaria to the east, Kosovo to the northwest and Serbia to the north. It constitutes approximately the northern third of the larger geographical region of Macedonia. Skopje, the capital and largest city, is home to a quarter of the country's population of over 1.83 million. The majority of the residents are ethnic Macedonians, a South Slavic people. Albanians form a significant minority at around 25%, followed by Turks, Roma, Serbs, Bosniaks, Aromanians and a few other minorities.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex gap-4 p-4 rounded-xl border border-slate-200 bg-white">
+                        <div class="absolute top-2 right-2 flex gap-1"></div>
+                        <div class="w-16 h-16 bg-slate-100 rounded-lg overflow-hidden border flex items-center justify-center flex-shrink-0">
+                            <img src="" class="object-cover w-full h-full" onerror="this.src='https://placehold.co/100x100?text=N/A';">
+                        </div>
+                        <div class="flex-1 pr-36">
+                            <h5 class="text-sm font-bold text-slate-900">Macedonia</h5>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Macedonia, also called Macedon, was an ancient kingdom on the periphery of Archaic and Classical Greece, which later became the dominant state of Hellenistic Greece. The kingdom was founded and initially ruled by the royal Argead dynasty, which was followed by the Antipatrid and Antigonid dynasties. Home to the ancient Macedonians, the earliest kingdom was centred on the northeastern part of the Greek peninsula, and bordered by Epirus to the southwest, Illyria to the northwest, Paeonia to the north, Thrace to the east and Thessaly to the south.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/60">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">👥 CASE 3: User Responses (Humans)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-4">
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 block">Percentage YES</span>
+                        <span class="text-lg font-bold text-emerald-600">20.0%</span>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden"><div class="bg-emerald-500 h-full" style="width: 20%"></div></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 block">Percentage NO</span>
+                        <span class="text-lg font-bold text-rose-600">80.0%</span>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden"><div class="bg-rose-500 h-full" style="width: 80%"></div></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 block">Percentage UNCERTAIN</span>
+                        <span class="text-lg font-bold text-amber-600">0.0%</span>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden"><div class="bg-amber-500 h-full" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-indigo-950 text-indigo-100 rounded-xl p-5 border border-indigo-900">
+                <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">🤖 CASE 4: Model Justification</h4>
+                <div class="text-sm bg-indigo-900/40 p-4 rounded-lg whitespace-pre-wrap text-white">Answer: 'Šar Mountains in North Macedonia' Explanation: 'The Šar Mountains are a mountain range in North Macedonia. They are part of the Dinaric Alps and are known for their unique geological features, such as the rock formations and the presence of the endemic plant species. The mountains are also home to a variety of wildlife, including bears, wolves, and eagles. The area is popular among hikers and nature enthusiasts, who can explore the mountains and enjoy the stunning views from the top of the peaks. The image shows a beautiful view of the mountains, with the blue sky and the clouds in the background, which adds to the overall beauty of the scene.'</div>
+            </div>
+        </article>
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-6 space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider bg-slate-800 text-white px-3 py-1 rounded-full">Example #2</span>
+                    <span class="px-3 py-1 text-xs font-bold rounded-full bg-rose-600 text-white">🟥 WRONG ANSWER</span>
+                </div>
+                <span class="text-sm font-medium text-slate-500">Mention: <strong class="text-slate-900">"German pre-war military exercise Herbstmanöver in southern Germany autumn 1909 (Emperor Wilhelm II second on the left)"</strong></span>
+            </div>
+            
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/60">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">📍 CASE 1: Input</h4>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="md:col-span-1 flex flex-col items-center justify-center bg-white p-2 rounded-lg border border-slate-200">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Kaiserparade_1909_Karlsruhe.jpg" class="max-h-40 object-contain rounded" onerror="this.src='https://placehold.co/150x150?text=No+Image';">
+                    </div>
+                    <div class="md:col-span-3"><div class="bg-slate-900 rounded-lg p-4 font-mono text-xs text-emerald-400 overflow-y-auto max-h-40 whitespace-pre-wrap">What entity does the label 'German pre-war military exercise Herbstmanöver in southern Germany autumn 1909 (Emperor Wilhelm II second on the left)' represent in this image? 
+You must strictly adhere to this format for your response, without any additional introduction. Format: Answer: 'Enter the name of the selected candidate entity here' Explanation: 'Briefly describe why you chose this entity' The quotation marks for 'answer' and 'explanation' are very important; you must always include them.</div></div>
+                </div>
+            </div>
+            
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/60">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">🗂️ CASE 2: Candidates</h4>
+                <div class="space-y-3">
+                    <div class="relative flex gap-4 p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50/20">
+                        <div class="absolute top-2 right-2 flex gap-1"><span class="bg-emerald-600 text-white text-[9px] font-extrabold px-2 py-0.5 rounded shadow">GROUND TRUTH</span> </div>
+                        <div class="w-16 h-16 bg-slate-100 rounded-lg overflow-hidden border flex items-center justify-center flex-shrink-0">
+                            <img src="http://commons.wikimedia.org/wiki/Special:FilePath/Kaiser%20Wilhelm%20II%20of%20Germany%20-%201902.jpg" class="object-cover w-full h-full" onerror="this.src='https://placehold.co/100x100?text=N/A';">
+                        </div>
+                        <div class="flex-1 pr-36">
+                            <h5 class="text-sm font-bold text-slate-900">Wilhelm II</h5>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Wilhelm II was the last German Emperor from 1888 until his abdication in 1918. His fall from power marked the end of the German Empire as well as the Hohenzollern dynasty's 500-year rule over Prussia.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex gap-4 p-4 rounded-xl border border-slate-200 bg-white">
+                        <div class="absolute top-2 right-2 flex gap-1"></div>
+                        <div class="w-16 h-16 bg-slate-100 rounded-lg overflow-hidden border flex items-center justify-center flex-shrink-0">
+                            <img src="http://commons.wikimedia.org/wiki/Special:FilePath/Kronprinz%20Wilhelm%201.%20Leib-Husarenregiment.jpg" class="object-cover w-full h-full" onerror="this.src='https://placehold.co/100x100?text=N/A';">
+                        </div>
+                        <div class="flex-1 pr-36">
+                            <h5 class="text-sm font-bold text-slate-900">Wilhelm, German Crown Prince</h5>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Wilhelm, German Crown Prince, Crown Prince of Prussia, was the eldest child of the last German emperor, Wilhelm II, and his consort Augusta Victoria of Schleswig-Holstein. As Emperor Wilhelm's heir, he was the last German Crown Prince and Crown Prince of Prussia, until the abolition of the monarchy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200/60">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">👥 CASE 3: User Responses (Humans)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-4">
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 block">Percentage YES</span>
+                        <span class="text-lg font-bold text-emerald-600">0.0%</span>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden"><div class="bg-emerald-500 h-full" style="width: 0%"></div></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 block">Percentage NO</span>
+                        <span class="text-lg font-bold text-rose-600">100.0%</span>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden"><div class="bg-rose-500 h-full" style="width: 100%"></div></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 block">Percentage UNCERTAIN</span>
+                        <span class="text-lg font-bold text-amber-600">0.0%</span>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden"><div class="bg-amber-500 h-full" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-indigo-950 text-indigo-100 rounded-xl p-5 border border-indigo-900">
+                <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">🤖 CASE 4: Model Justification</h4>
+                <div class="text-sm bg-indigo-900/40 p-4 rounded-lg whitespace-pre-wrap text-white">Answer: 'German pre-war military exercise Herbstmanöver in southern Germany autumn 1909 (Emperor Wilhelm II second on the left)' Explanation: The image is a black and white photograph of a military exercise in 1909. The label represents the German military, specifically Emperor Wilhelm II, who is second from the left. The photograph captures the event and the participants, including the Emperor, in their uniforms.</div>
+            </div>
+        </article></main></body></html>
