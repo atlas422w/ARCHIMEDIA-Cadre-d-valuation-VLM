@@ -101,8 +101,6 @@ def main():
          open(out_path, "w", encoding="utf-8") as write_file:
 
         for line in read_file:
-            if processed_lines > 1:
-                break
             result = handle_inference(line, model, processor, num_model, config)
             write_file.write(json.dumps(result, ensure_ascii=False) + "\n")
             processed_lines += 1
